@@ -1,0 +1,11 @@
+services:
+    postgres:
+      image: postgres:16-alpine # or postgres:17
+      ports:
+        - "5432:5432"
+      environment:
+        POSTGRES_DB: caenis_overseer
+        POSTGRES_USER: caenis
+        POSTGRES_PASSWORD: caenis
+
+

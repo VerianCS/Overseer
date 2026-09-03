@@ -1,0 +1,7 @@
+name: CaenisLance
+version: '${version}'
+
+main: com.sideplanetary.overseerPlugin.OverseerPlugin
+api-version: '26.2'
+load: POSTWORLD
+description: "The telemetry enhanced real time suite for anti cheat purposes plugin"

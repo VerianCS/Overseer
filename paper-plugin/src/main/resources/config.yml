@@ -1,0 +1,19 @@
+nifi:
+  url: "http://localhost:8085/telemetry"
+  # Shared authentication secret to authorize telemetry packets
+  auth-key: "CHANGE_ME_TO_A_CRYPTOGRAPHICALLY_SECURE_TOKEN_32_CHARS"
+  connect-timeout-seconds: 2
+  request-timeout-seconds: 3
+
+collector:
+  # Max records sent in a single HTTP POST request
+  batch-size: 100
+  # Interval in milliseconds between asynchronous flushes
+  flush-interval-ms: 500
+  # Fixed-capacity in-memory buffer; oldest records are dropped when full
+  # to protect server heap during NiFi outages or network partitions
+  queue-capacity: 5000
+  # Dedicated HTTP dispatch threads decoupled from Bukkit workers / common pool
+  http-threads: 2
+  # Bound on queued dispatch tasks to avoid uncontrolled memory growth
+  http-queue-capacity: 1000

@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: Overseer
+  datasource:
+    url: jdbc:postgresql://localhost:5432/caenis_overseer
+    username: caenis
+    password: caenis
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc.batch_size: 50
+        order_inserts: true
+        order_updates: true
+
+server:
+  port: 8080
